@@ -15,8 +15,16 @@
  */
 package com.example.busschedule.data
 
+import androidx.annotation.NonNull
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+// Entity corresponds to a table in the database.
+// Each instance of an entity represents a row in the table.
+@Entity(tableName = "Schedule")
 data class BusSchedule(
-    val id: Int,
-    val stopName: String,
-    val arrivalTimeInMillis: Int
+    @PrimaryKey val id: Int,
+    @NonNull @ColumnInfo(name = "stop_name") val stopName: String,
+    @NonNull @ColumnInfo(name = "arrival_time") val arrivalTimeInMillis: Int
 )
