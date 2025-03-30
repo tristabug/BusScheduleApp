@@ -4,6 +4,7 @@ import androidx.room.Dao
 import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
+// Data Access Object allows interaction between the stored data and the app
 @Dao
 interface BusScheduleDao {
     @Query(
